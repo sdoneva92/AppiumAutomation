@@ -8,8 +8,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+@Deprecated
 public class Caps {
 
+    /*
+    This class was just to identify the structure in the project
+     */
 
     public static void main(String... args) throws MalformedURLException, InterruptedException {
 
@@ -73,24 +77,6 @@ public class Caps {
         conquerWorldCheckBox.click();
         Thread.sleep(100);
         driver.navigate().back();
-
-
-        driver.close();
-//        Thread.sleep(200);
-
-//        nodeQueryingElement.click();
-//        Thread.sleep(200);
-
-//        checkBox.click();
-//        Thread.sleep(100);
-//
-//        goLaunchedBox.click();
-//        Thread.sleep(100);
-
-        conquerWorldCheckBox.click();
-
-        driver.closeApp();
-
 
     }
 }

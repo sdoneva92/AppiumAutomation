@@ -7,10 +7,6 @@ public class APIDemoStartPage {
 
     private AndroidDriver driver;
 
-    public APIDemoStartPage(AndroidDriver androidDriver) {
-        this.driver = androidDriver;
-    }
-
     private By continueElement = By.id("com.android.permissioncontroller:id/continue_button");
 
     private By okButton = By.id("android:id/button1");
@@ -37,70 +33,60 @@ public class APIDemoStartPage {
 
     private By viewsElement = By.xpath("//android.widget.TextView[@content-desc='Views']");
 
-    public void clickOnContinueButton() {
-
-        driver.findElement(continueElement).click();
+    public By getContinueElement() {
+        return continueElement;
     }
 
-    public void clickOkButton() {
-
-        driver.findElement(okButton).click();
+    public By getOkButton() {
+        return okButton;
     }
 
-    public void clickAccessibilityButton() {
-
-        driver.findElement(accessibilityButton).click();
+    public By getAccessibilityButton() {
+        return accessibilityButton;
     }
 
-    public void clickAccessibilityNodeProviderElement() {
-
-        driver.findElement(accessibilityNodeProviderElement).click();
+    public By getAccessibilityNodeProviderElement() {
+        return accessibilityNodeProviderElement;
     }
 
-    public void clickAppElement() {
-
-        driver.findElement(appElement).click();
-
+    public By getAppElement() {
+        return appElement;
     }
 
-    public void clickContentElement() {
-
-        driver.findElement(contentElement).click();
+    public By getContentElement() {
+        return contentElement;
     }
 
-    public void clickGraphicsElement() {
-
-        driver.findElement(graphicsElement).click();
+    public By getGraphicsElement() {
+        return graphicsElement;
     }
 
-    public void clickMediaElement(){
-
-        driver.findElement(mediaElement).click();
+    public By getMediaElement() {
+        return mediaElement;
     }
 
-    public void clickNfcElement(){
-
-        driver.findElement(nfcElement).click();
+    public By getNfcElement() {
+        return nfcElement;
     }
 
-    public void clickOsElement(){
-
-        driver.findElement(osElement).click();
+    public By getOsElement() {
+        return osElement;
     }
 
-    public void clickPreferencesElement(){
-
-        driver.findElement(preferencesElement).click();
+    public By getPreferencesElement() {
+        return preferencesElement;
     }
 
-    public void clickTextElement(){
-
-        driver.findElement(textElement).click();
+    public By getTextElement() {
+        return textElement;
     }
 
-    public void clickViewsElement(){
+    public By getViewsElement() {
+        return viewsElement;
+    }
 
-        driver.findElement(viewsElement).click();
+    public void setDriver(AndroidDriver driver) {
+        this.driver = driver;
     }
 }
 

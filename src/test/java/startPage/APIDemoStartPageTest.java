@@ -1,6 +1,7 @@
 package startPage;
 
 import capabilities.BaseClass;
+import factories.StartPageFactory;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
@@ -19,6 +20,7 @@ public class APIDemoStartPageTest {
     private DesiredCapabilities capabilities;
     private AndroidDriver androidDriver;
     private APIDemoStartPage apiDemoStartPage;
+    private StartPageFactory startPageFactory;
     private BaseClass baseClass;
     private File apk;
 
@@ -34,12 +36,15 @@ public class APIDemoStartPageTest {
     @Test
     public void clickOnStartPageButtons() throws InterruptedException {
 
-        apiDemoStartPage = new APIDemoStartPage(androidDriver);
+        apiDemoStartPage = new APIDemoStartPage();
+        apiDemoStartPage.setDriver(androidDriver);
 
-        apiDemoStartPage.clickOnContinueButton();
-        Thread.sleep(600);
-        apiDemoStartPage.clickOkButton();
-        Thread.sleep(600);
-        apiDemoStartPage.clickAccessibilityButton();
+        startPageFactory = new StartPageFactory();
+        startPageFactory.clickOnContinueElement(androidDriver);
+
+        startPageFactory.sleepTheThread(600);
+
+        startPageFactory.clickOkButton(androidDriver);
+
     }
 }

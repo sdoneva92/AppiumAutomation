@@ -22,7 +22,7 @@ public class BaseFactory extends BasePage {
         driver.navigate().forward();
     }
 
-    public void swipe(AndroidDriver driver) {
+    public void closeApp(AndroidDriver driver) {
         driver.closeApp();
     }
 

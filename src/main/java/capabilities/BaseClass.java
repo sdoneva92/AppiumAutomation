@@ -8,6 +8,7 @@ import java.io.File;
 import static constants.Constants.*;
 
 public class BaseClass {
+
     public DesiredCapabilities setDesiredCapabilities(File apkFile, String deviceName) {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 

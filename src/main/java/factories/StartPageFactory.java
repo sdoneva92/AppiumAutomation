@@ -1,11 +1,10 @@
 package factories;
 
-import capabilities.BaseClass;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import pages.APIDemoStartPage;
 
-public class StartPageFactory extends BaseClass {
+public class StartPageFactory extends BaseFactory{
 
     private APIDemoStartPage apiDemoStartPage;
 
@@ -84,12 +83,8 @@ public class StartPageFactory extends BaseClass {
         androidDriver.findElement(viewsElement).click();
     }
 
-    public void sleepTheThread(long milisec) {
-
-        try {
-            Thread.sleep(milisec);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void clickOnAnimationButton(AndroidDriver driver){
+        By animationElement = apiDemoStartPage.getAnimationButton();
+        driver.findElement(animationElement).click();
     }
 }

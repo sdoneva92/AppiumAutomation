@@ -11,6 +11,7 @@ import pages.APIDemoStartPage;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Objects;
 
 import static constants.Constants.DEVICE_NAME_SVETLANA;
 import static constants.Constants.ULR_LOCAL_APPIUM;
@@ -22,12 +23,12 @@ public class BaseTest {
     protected APIDemoStartPage apiDemoStartPage;
     protected StartPageFactory startPageFactory;
     private BaseClass baseClass;
-    protected File apk;
+    private File apk;
 
     @BeforeClass
     public void setup() throws MalformedURLException {
         baseClass = new BaseClass();
-        apk = new File(getClass().getClassLoader().getResource(Constants.APP_NAME).getFile());
+        apk = new File(Objects.requireNonNull(getClass().getClassLoader().getResource(Constants.APP_NAME)).getFile());
         capabilities = baseClass.setDesiredCapabilities(apk, DEVICE_NAME_SVETLANA);
         androidDriver = new AndroidDriver(new URL(ULR_LOCAL_APPIUM), capabilities);
     }

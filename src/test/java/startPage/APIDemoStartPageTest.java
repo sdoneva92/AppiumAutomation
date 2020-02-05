@@ -1,41 +1,17 @@
 package startPage;
 
-import capabilities.BaseClass;
+import base.BaseTest;
 import factories.StartPageFactory;
-import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.APIDemoStartPage;
 
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
+import static constants.Constants.DIRECTION_NAME_DOWN;
 
-import static constants.Constants.DEVICE_NAME_SVETLANA;
-import static constants.Constants.ULR_LOCAL_APPIUM;
+public class APIDemoStartPageTest extends BaseTest {
 
-public class APIDemoStartPageTest {
-
-    private DesiredCapabilities capabilities;
-    private AndroidDriver androidDriver;
-    private APIDemoStartPage apiDemoStartPage;
-    private StartPageFactory startPageFactory;
-    private BaseClass baseClass;
-    private File apk;
-
-    @BeforeClass
-    public void setup() throws MalformedURLException {
-        baseClass = new BaseClass();
-        apk = new File(getClass().getClassLoader().getResource("ApiDemos-debug.apk").getFile());
-        capabilities = baseClass.setDesiredCapabilities(apk, DEVICE_NAME_SVETLANA);
-        androidDriver = new AndroidDriver(new URL(ULR_LOCAL_APPIUM), capabilities);
-    }
-
-
-    @Test
-    public void clickOnStartPageButtons() throws InterruptedException {
-
+    @BeforeMethod
+    public void init() {
         apiDemoStartPage = new APIDemoStartPage();
         apiDemoStartPage.setDriver(androidDriver);
 
@@ -45,6 +21,39 @@ public class APIDemoStartPageTest {
         startPageFactory.sleepTheThread(600);
 
         startPageFactory.clickOkButton(androidDriver);
+    }
+
+    @Test
+    public void verifyThatAllElementsOnTheStartPageAreWorking() {
+
+        startPageFactory.clickAccessibilityButton(androidDriver);
+        startPageFactory.navigateBack(androidDriver);
+        startPageFactory.clickOnAnimationButton(androidDriver);
+        startPageFactory.navigateBack(androidDriver);
+        startPageFactory.clickAppElement(androidDriver);
+        startPageFactory.navigateBack(androidDriver);
+        startPageFactory.clickContentElement(androidDriver);
+        startPageFactory.navigateBack(androidDriver);
+        startPageFactory.clickGraphicsElement(androidDriver);
+        startPageFactory.navigateBack(androidDriver);
+        startPageFactory.clickMediaElement(androidDriver);
+        startPageFactory.navigateBack(androidDriver);
+        startPageFactory.clickNfcElement(androidDriver);
+        startPageFactory.navigateBack(androidDriver);
+        startPageFactory.clickOsElement(androidDriver);
+        startPageFactory.navigateBack(androidDriver);
+        startPageFactory.clickPreferencesElement(androidDriver);
+        startPageFactory.navigateBack(androidDriver);
+        startPageFactory.scroll(DIRECTION_NAME_DOWN, 1, androidDriver);
+        startPageFactory.clickTextElement(androidDriver);
+        startPageFactory.navigateBack(androidDriver);
+        startPageFactory.clickViewsElement(androidDriver);
+        startPageFactory.navigateBack(androidDriver);
+        androidDriver.closeApp();
+    }
+
+    //    @Test()
+    public void clickOnAnimationButton() {
 
     }
 }

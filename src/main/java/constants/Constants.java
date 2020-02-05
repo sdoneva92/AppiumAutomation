@@ -13,5 +13,8 @@ public class Constants {
     public static final String APP_PACKAGE_NAME = "io.appium.android.apis";
     public static final String APP_ACTIVITY_KEY = "appActivity";
     public static final String APP_ACTIVITY_NAME = "io.appium.android.apis.ApiDemos";
+    public static final String APP_NAME = "ApiDemos-debug.apk";
     public static final String ULR_LOCAL_APPIUM = "http://127.0.0.1:4723/wd/hub";
+    public static final String DIRECTION_NAME_DOWN = "down";
+    public static final String DIRECTION_NAME_UP = "up";
 }

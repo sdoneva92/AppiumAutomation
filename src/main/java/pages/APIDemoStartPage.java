@@ -1,17 +1,16 @@
 package pages;
 
-import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
-public class APIDemoStartPage {
-
-    private AndroidDriver driver;
+public class APIDemoStartPage extends BasePage {
 
     private By continueElement = By.id("com.android.permissioncontroller:id/continue_button");
 
     private By okButton = By.id("android:id/button1");
 
     private By accessibilityButton = By.xpath("//android.widget.TextView[@content-desc='Accessibility']");
+
+    private By animationButton = By.xpath("//android.widget.TextView[@content-desc='Animation']");
 
     private By accessibilityNodeProviderElement = By.xpath("//android.widget.TextView[@content-desc='Accessibility Node Provider']");
 
@@ -85,8 +84,8 @@ public class APIDemoStartPage {
         return viewsElement;
     }
 
-    public void setDriver(AndroidDriver driver) {
-        this.driver = driver;
+    public By getAnimationButton() {
+        return animationButton;
     }
 }
 

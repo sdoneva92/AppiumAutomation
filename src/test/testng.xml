@@ -5,7 +5,7 @@
         <listener class-name="logging.CustomListener"/>
     </listeners>
 
-    <test name="SmokeTests">
+    <test name="SmokeTests" verbose="2">
         <classes>
             <class name="startPage.APIDemoStartPageTest">
                 <methods>
